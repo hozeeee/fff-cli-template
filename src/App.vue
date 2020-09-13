@@ -2,25 +2,29 @@
   <div id="app">
     <Header />
     <div class="_center">
-      <Aside />
+      <!-- <Aside /> -->
       <div class="_view_content">
         <router-view />
       </div>
     </div>
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 <script>
 import Header from "@/header";
-import Footer from "@/footer";
-import Aside from "@/aside";
+/* ********** PC 端 ********** */
+// import Footer from "@/footer";
+// import Aside from "@/aside";
+/* *************************** */
 
 export default {
   name: "App",
   components: {
     Header,
-    Footer,
-    Aside,
+    /* ********** PC 端 ********** */
+    // Footer,
+    // Aside,
+    /* *************************** */
   },
 };
 </script>
@@ -32,13 +36,17 @@ export default {
   flex-direction: column;
   text-align: center;
   overflow: auto;
-  min-height: 600px;
-  min-width: 900px;
+  /* ***** PC 端 ***** */
+  // min-height: 600px;
+  // min-width: 900px;
+  /* **************** */
   ._center {
     flex: 1;
     width: 100%;
     display: flex;
+    overflow: hidden;
     ._view_content {
+      overflow: hidden;
       /* 含有 aside 的布局 */
       flex: 1;
       /* **************** */

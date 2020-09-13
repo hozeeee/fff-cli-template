@@ -13,7 +13,9 @@
     "axios": "^0.20.0",
     "core-js": "^3.6.5",
     "dayjs": "^1.8.35",
+    "hammerjs": "^2.0.8",
     "perfect-scrollbar": "^1.5.0",
+    "swiper": "^6.2.0",
     "vue": "^2.6.11",
     "vue-router": "^3.4.3",
     "vuex": "^3.5.1"

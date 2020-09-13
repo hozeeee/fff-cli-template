@@ -1,6 +1,6 @@
 <template>
   <div class="aside_container" :class="showMenu? '': 'hide_menu'">
-    <div class="menu_content" ref="prefectScrollbarContainer">
+    <div class="menu_content" v-scrollbar>
       <myMenu :menuData="menuData" />
     </div>
     <div class="slide_left_btn_container">
@@ -27,19 +27,9 @@ export default {
       pScrollbar: null,
     };
   },
-  mounted() {
-    let el = this.$refs.prefectScrollbarContainer;
-    this.pScrollbar = new this.$PerfectScrollbar(el);
-    this.pScrollbar.update();
-  },
   created() {
     // "菜单"转成"路由"
     transformMenuToRoutes(this.menuData);
-  },
-  beforeDestroy() {
-    if (this.ps && typeof this.pScrollbar.destroy === "function")
-      this.pScrollbar.destroy();
-    this.pScrollbar = null;
   },
   components: { myMenu },
 };

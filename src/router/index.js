@@ -10,11 +10,11 @@ const router = new VueRouter({
   // 路由的配置在 aside 组件中生成
   routes: [
     // // TODO: 这部分改成配置
-    // {
-    //   path: '/',
-    //   name: "home",
-    //   component: Vue.component("home") // 组件的注册请在 route.component.config.js 配置
-    // }
+    {
+      path: '/',
+      name: "home",
+      component: Vue.component("route-home") // 组件的注册请在 route.component.config.js 配置。以 route-* 格式命名。
+    }
   ]
 
 });

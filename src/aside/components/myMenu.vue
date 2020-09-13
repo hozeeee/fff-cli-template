@@ -66,6 +66,7 @@ export default {
   },
   methods: {
     handleClick({ item }) {
+      if (this.$route.path === item.value.path) return;
       this.$router.push(item.value.path);
     },
     handleRouteChange() {
