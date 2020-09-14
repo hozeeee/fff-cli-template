@@ -1,9 +1,6 @@
 <template>
-  <div class="home_container">
-    <!-- ------------------------ PC 端 ------------------------ -->
-    <!-- <span style="font-size:60px; line-height:160px;">home</span> -->
-    <!-- ------------------------------------------------------- -->
-    <!-- ------------------------ 移动端 ------------------------ -->
+  <div class="home_container"><% if(!isMobile){%>
+    <span style="font-size:60px; line-height:160px;">home</span><%} %><% if(isMobile){%>
     <div class="home_swiper_container swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" v-for="(item,index) of sliderList" :key="index">
@@ -26,18 +23,14 @@
         <a-icon class="icon" :type="item.icon" />
         <span class="label">{{ item.name }}</span>
       </div>
-    </div>
-    <!-- ------------------------------------------------------- -->
+    </div><%} %>
   </div>
 </template>
-<script>
-/* ********************* 移动端 ********************* */
+<script><% if(isMobile){%>
 import exampleSlide from "@/components/examples/exampleSlide";
 import example1 from "@/components/examples/example1";
-/* ************************************************* */
 
-export default {
-  /* ********************* 移动端 ********************* */
+<%} %>export default {<% if(isMobile){%>
   data() {
     return {
       homeSwiper: null,
@@ -60,8 +53,7 @@ export default {
     });
     console.log("this.homeSwiper", this.homeSwiper);
   },
-  components: { exampleSlide, example1 },
-  /* ************************************************* */
+  components: { exampleSlide, example1 },<%} %>
 };
 </script>
 <style lang="less" scoped>
@@ -69,8 +61,7 @@ export default {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: rgb(240, 240, 240);
-  /* ******* 移动端 ******* */
+  background-color: rgb(240, 240, 240);<% if(isMobile){%>
   display: flex;
   flex-direction: column;
   .home_swiper_container {
@@ -94,7 +85,6 @@ export default {
         color: blue;
       }
     }
-  }
-  /* ********************* */
+  }<%} %>
 }
 </style>

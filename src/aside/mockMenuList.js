@@ -17,7 +17,7 @@ export default [{
     "iconType": "pie-chart",
     "name": "example1",
     "path": "/example1",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }]
 }, {
@@ -31,7 +31,7 @@ export default [{
     "iconType": "sliders",
     "name": "example2",
     "path": "/example2",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 320,
@@ -44,7 +44,7 @@ export default [{
       "iconType": "",
       "name": "example3",
       "path": "/example3",
-      "component": "exampleView",
+      "component": "commonView",
       "children": []
     }, {
       "id": 322,
@@ -52,7 +52,7 @@ export default [{
       "iconType": "",
       "name": "example4",
       "path": "/example4",
-      "component": "exampleView",
+      "component": "commonView",
       "children": []
     }, {
       "id": 323,
@@ -60,7 +60,7 @@ export default [{
       "iconType": "",
       "name": "example5",
       "path": "/example5",
-      "component": "exampleView",
+      "component": "commonView",
       "children": []
     }]
   }]
@@ -75,7 +75,7 @@ export default [{
     "iconType": "alert",
     "name": "example6",
     "path": "/example6",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 420,
@@ -83,7 +83,7 @@ export default [{
     "iconType": "api",
     "name": "example7",
     "path": "/example7",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 430,
@@ -91,7 +91,7 @@ export default [{
     "iconType": "appstore",
     "name": "example8",
     "path": "/example8",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 440,
@@ -99,7 +99,7 @@ export default [{
     "iconType": "audio",
     "name": "example9",
     "path": "/example9",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 450,
@@ -107,7 +107,7 @@ export default [{
     "iconType": "bank",
     "name": "example10",
     "path": "/example10",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 460,
@@ -115,7 +115,7 @@ export default [{
     "iconType": "bell",
     "name": "example11",
     "path": "/example11",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 470,
@@ -123,7 +123,7 @@ export default [{
     "iconType": "book",
     "name": "example12",
     "path": "/example12",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 480,
@@ -131,7 +131,7 @@ export default [{
     "iconType": "bug",
     "name": "example13",
     "path": "/example13",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }, {
     "id": 490,
@@ -139,7 +139,7 @@ export default [{
     "iconType": "bulb",
     "name": "example14",
     "path": "/example14",
-    "component": "exampleView",
+    "component": "commonView",
     "children": []
   }]
 }]

@@ -4,19 +4,14 @@ import Vue from "vue";
  * 路由用到的组件都在这里注册
  * 格式：
  *  "home" 字符串，直接读取 views 目录下的文件
- *  ["examples", "qqList"] 数组，按顺序拼接路径，以 views 为根路径，以数组最后一个元素作为名字
+ *  ["examples", "commonView"] 数组，按顺序拼接路径，以 views 为根路径，以数组最后一个元素作为名字
  */
 const TAB_ROUTERs = [
   "home", // 首页
-
-  // 示例组件
-  /* ***** PC 端 ***** */
-  ["examples", "commonView"],
-  /* ***************** */
-
-  /* ***** 移动端 ***** */
-  ["examples", "qqList"] // 示例组件
-  /* ***************** */
+  
+  // 示例组件<% if(!isMobile){%>
+  ["examples", "commonView"],<%} %><% if(isMobile){%>
+  ["examples", "qqList"],<%} %>
 ]
 
 

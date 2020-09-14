@@ -1,37 +1,28 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "@/router";
-import store from "@/store";
-/* ******* PC 端 ******* */
-import PerfectScrollbar from "perfect-scrollbar";
-/* ********************* */
+import store from "@/store";<% if(!isMobile){%>
+import PerfectScrollbar from "perfect-scrollbar";<%} %>
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 import dayjs from "dayjs";
 import axios from "axios";
 import "@/axios.config.js";
-import "@/assets/css/global.css";
-/* ******* 移动端 ******* */
+import "@/assets/css/global.css";<% if(isMobile){%>
 import Hammer from "hammerjs";
 import Swiper from "swiper";
-import "swiper/swiper-bundle.css";
-/* ********************* */
+import "swiper/swiper-bundle.css";<%} %>
 Vue.config.productionTip = false;
 
 // 按需加载 ant-design-vue
-import {
-  /* *** 侧边栏 *** */
-  Menu,
-  /* ************* */
+import {<% if(needAside){%>
+  Menu,<%} %>
   Icon
-} from "ant-design-vue";
-/* *** 侧边栏 *** */
-Vue.use(Menu);
-/* ************* */
+} from "ant-design-vue";<% if(needAside){%>
+Vue.use(Menu);<%} %>
 Vue.use(Icon);
 
 Vue.prototype.$axios = axios;
-Vue.prototype.$dayjs = dayjs;
-/* ******* PC 端 ******* */
+Vue.prototype.$dayjs = dayjs;<% if(!isMobile){%>
 Vue.directive("scrollbar", {
   inserted(el) {
     let ps = new PerfectScrollbar(el);
@@ -41,9 +32,7 @@ Vue.directive("scrollbar", {
     if (el.__ps && typeof el.__ps.destroy === "function") el.__ps.destroy();
     delete el.__ps;
   },
-});
-/* ********************* */
-/* ******* 移动端 ******* */
+});<%} %><% if(isMobile){%>
 Vue.prototype.$Swiper = Swiper;
 // pan: 按压拖动; pinch: 两(多)指缩放手势;  press: 持续按下(250ms)触发;  rotate: 两(多)指旋转;  swipe: 左右滑动手势;  tap: 普通的触碰
 const validTouchGestures = ["pan", "pinch", "press", "rotate", "swipe", "tap"];
@@ -59,8 +48,7 @@ Vue.directive("touch", {
     if (defaultDisableGestures.includes(modifiers[0])) hammer.get(modifiers[0]).set({ enable: true });
     hammer.on(modifiers[0], callback);
   },
-});
-/* ********************* */
+});<%} %>
 
 new Vue({
   store,

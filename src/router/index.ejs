@@ -7,14 +7,11 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   mode: "history",
 
-  /* ********** PC 端 ********** */
-  // // 路由的配置在 aside 组件中生成
-  // routes: [
-  //   // 组件的注册请在 route.component.config.js 配置。以 route-* 格式命名。
-  // ],
-  /* *************************** */
-
-  /* ********** 移动端 ********** */
+<% if(!isMobile){%>
+  // 路由的配置在 aside 组件中生成
+  routes: [
+    // 组件的注册请在 route.component.config.js 配置。以 route-* 格式命名。
+  ],<%} %><% if(isMobile){%>
   routes: [{
     path: '/',
     name: "home",
@@ -23,8 +20,7 @@ const router = new VueRouter({
     path: '/qqList',
     name: "qqList",
     component: Vue.component("route-qqList")
-  }]
-  /* *************************** */
+  }]<%} %>
 
 });
 

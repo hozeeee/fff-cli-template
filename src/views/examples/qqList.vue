@@ -3,7 +3,7 @@
     <div class="title">模仿手机QQ的消息列表</div>
     <div
       class="mock_qq_swiper_container swiper-container"
-      v-for="(item,index) of Array(10)"
+      v-for="(item,index) of Array(16)"
       :key="index"
     >
       <div class="item swiper-wrapper">
@@ -21,6 +21,7 @@ export default {
   data() {
     return {
       swiper: null,
+      preSwiper: null,
     };
   },
   methods: {
@@ -34,22 +35,21 @@ export default {
   mounted() {
     this.swiper = new this.$Swiper(".mock_qq_swiper_container", {
       slidesPerView: "auto",
-      // initialSlide: 1,
       resistanceRatio: 0,
-      slideToClickedSlide: true,
       on: {
-        transitionEnd: (swiper) => {
-          if (swiper.snapIndex === 0) return;
-          let closeMenu;
-          closeMenu = () => {
-            swiper.slidePrev();
-            document.body.removeEventListener("click", closeMenu);
-          };
-          document.body.addEventListener("click", closeMenu);
+        touchEnd: (swiper) => {
+          setTimeout(() => {
+            if (swiper.snapIndex === 0) return;
+            let closeMenu;
+            closeMenu = () => {
+              swiper.slidePrev();
+              document.body.removeEventListener("touchstart", closeMenu);
+            };
+            document.body.addEventListener("touchstart", closeMenu);
+          }, 0);
         },
       },
     });
-    console.log("this.swiper2", this.swiper);
   },
 };
 </script>
@@ -58,6 +58,9 @@ export default {
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  .title {
+    font-size: 18px;
+  }
   .mock_qq_swiper_container {
     height: 60px;
     line-height: 60px;
@@ -73,7 +76,7 @@ export default {
         }
       }
       .item_menu {
-        width: 50px;
+        width: 70px;
         background-color: red;
         color: #fff;
       }
