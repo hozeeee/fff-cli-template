@@ -2,12 +2,12 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from '@/router';
 import '@/assets/css/global.css';
-import axios from "axios";
-import "@/axios.config.js";
+import api from "@/axios";
+import "@/axios/axios.config.js";
 
 Vue.config.productionTip = false
 
-Vue.prototype.$axios = axios;
+Vue.prototype.$api = api;
 
 new Vue({
   router,

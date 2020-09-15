@@ -7,8 +7,7 @@ import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 /* ********************* */
 import dayjs from "dayjs";
-import axios from "axios";
-import "@/axios.config.js";
+import api from "@/axios";
 import "@/assets/css/global.css";
 /* ******* 移动端 ******* */
 import Hammer from "hammerjs";
@@ -29,7 +28,7 @@ Vue.use(Menu);
 /* ************* */
 Vue.use(Icon);
 
-Vue.prototype.$axios = axios;
+Vue.prototype.$api = api;
 Vue.prototype.$dayjs = dayjs;
 /* ******* PC 端 ******* */
 Vue.directive("scrollbar", {

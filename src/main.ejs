@@ -5,8 +5,7 @@ import store from "@/store";<% if(!isMobile){%>
 import PerfectScrollbar from "perfect-scrollbar";
 import "perfect-scrollbar/css/perfect-scrollbar.css";<%} %>
 import dayjs from "dayjs";
-import axios from "axios";
-import "@/axios.config.js";
+import api from "@/axios";
 import "@/assets/css/global.css";<% if(isMobile){%>
 import Hammer from "hammerjs";
 import Swiper from "swiper";
@@ -21,7 +20,7 @@ import {<% if(needAside){%>
 Vue.use(Menu);<%} %>
 Vue.use(Icon);
 
-Vue.prototype.$axios = axios;
+Vue.prototype.$api = api;
 Vue.prototype.$dayjs = dayjs;<% if(!isMobile){%>
 Vue.directive("scrollbar", {
   inserted(el) {
