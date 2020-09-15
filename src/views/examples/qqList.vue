@@ -41,11 +41,14 @@ export default {
           setTimeout(() => {
             if (swiper.snapIndex === 0) return;
             let closeMenu;
+            let hammer = new this.$Hammer(document.body);
             closeMenu = () => {
               swiper.slidePrev();
-              document.body.removeEventListener("touchstart", closeMenu);
+              hammer.off("panstart tap", closeMenu);
+              hammer.destroy();
+              hammer = null;
             };
-            document.body.addEventListener("touchstart", closeMenu);
+            hammer.on("panstart tap", closeMenu);
           }, 0);
         },
       },

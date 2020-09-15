@@ -34,6 +34,7 @@ Vue.directive("scrollbar", {
   },
 });<%} %><% if(isMobile){%>
 Vue.prototype.$Swiper = Swiper;
+Vue.prototype.$Hammer = Hammer;
 // pan: 按压拖动; pinch: 两(多)指缩放手势;  press: 持续按下(250ms)触发;  rotate: 两(多)指旋转;  swipe: 左右滑动手势;  tap: 普通的触碰
 const validTouchGestures = ["pan", "pinch", "press", "rotate", "swipe", "tap"];
 const defaultDisableGestures = ["pinch", "rotate"];

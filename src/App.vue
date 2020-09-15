@@ -47,6 +47,7 @@ export default {
     overflow: hidden;
     ._view_content {
       overflow: hidden;
+      width: 100%;
       /* 含有 aside 的布局 */
       flex: 1;
       /* **************** */

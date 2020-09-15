@@ -1,4 +1,3 @@
-import Vue from "vue";
 
 /**
  * 路由用到的组件都在这里注册
@@ -6,7 +5,7 @@ import Vue from "vue";
  *  "home" 字符串，直接读取 views 目录下的文件
  *  ["examples", "qqList"] 数组，按顺序拼接路径，以 views 为根路径，以数组最后一个元素作为名字
  */
-const TAB_ROUTERs = [
+const TAB_ROUTERS = [
   "home", // 首页
 
   // 示例组件
@@ -15,29 +14,10 @@ const TAB_ROUTERs = [
   /* ***************** */
 
   /* ***** 移动端 ***** */
-  ["examples", "qqList"] // 示例组件
+  ["examples", "qqList"],
   /* ***************** */
 ]
 
-
-// 都是从 tab_components 文件夹获取对应的组件
-for (let item of TAB_ROUTERs) {
-  let path, name;
-  if (typeof item === "string") {
-    path = name = item;
-  }
-  if (Array.isArray(item)) {
-    path = item.join("/");
-    name = item[item.length - 1];
-  }
-  if (!path || !name) throw "路由组件配置(route.component.config.js)有误";
-  Vue.component(`route-${name}`, resolve => {
-    import(`@/views/${path}`).then(component => {
-      resolve(component);
-    }).catch(() => {});
-  })
-}
-
-
+export default TAB_ROUTERS;
 
 // 说明：将路由组件的注册抽离出来，是为了方便路由的配置，以及路由与菜单栏的配合。
