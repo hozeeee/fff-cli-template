@@ -4,8 +4,8 @@ import router from "@/router";
 import store from "@/store";
 /* ******* PC 端 ******* */
 import PerfectScrollbar from "perfect-scrollbar";
-/* ********************* */
 import "perfect-scrollbar/css/perfect-scrollbar.css";
+/* ********************* */
 import dayjs from "dayjs";
 import axios from "axios";
 import "@/axios.config.js";
