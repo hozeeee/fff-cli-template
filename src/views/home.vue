@@ -20,7 +20,7 @@
         class="item"
         v-for="(item,index) of sliderList"
         :key="index"
-        @click="homeSwiper.slideTo(index, 0, false)"
+        @click="swiperIndex=index"
         :class="swiperIndex===index? 'active': ''"
       >
         <a-icon class="icon" :type="item.icon" />
@@ -38,10 +38,20 @@ import example1 from "@/components/examples/example1";
 
 export default {
   /* ********************* 移动端 ********************* */
+  computed: {
+    swiperIndex: {
+      get() {
+        if (!this.homeSwiper) return 0;
+        return this.homeSwiper.activeIndex;
+      },
+      set(index) {
+        this.homeSwiper.slideTo(index, 0, false);
+      },
+    },
+  },
   data() {
     return {
       homeSwiper: null,
-      swiperIndex: 0,
       sliderList: [
         { name: "1", icon: "android", component: "example1" },
         { name: "2", icon: "apple", component: "exampleSlide" },
@@ -52,11 +62,6 @@ export default {
   mounted() {
     this.homeSwiper = new this.$Swiper(".home_swiper_container", {
       lazy: true,
-      on: {
-        slideChangeTransitionEnd: (swiper) => {
-          this.swiperIndex = swiper.realIndex;
-        },
-      },
     });
     console.log("this.homeSwiper", this.homeSwiper);
   },
