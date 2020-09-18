@@ -23,6 +23,6 @@
   "target": "./src/router/index.js"
 },
 {
-  "source": ".src/header/index.ejs",
-  "target": ".src/header/index.vue"
+  "source": "./src/header/index.ejs",
+  "target": "./src/header/index.vue"
 }]
