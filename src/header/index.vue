@@ -55,9 +55,10 @@ export default {
         targetPane = pane;
       });
       if (!targetPane) return;
+      this.panes = resultPanes;
+      if (activeKey === resultPanes[lastIndex].key) return;
       if (lastIndex >= 0) activeKey = resultPanes[lastIndex].key;
       else activeKey = resultPanes[0].key;
-      this.panes = resultPanes;
       this.activeKey = activeKey;
       this.onTabsChange(activeKey);
     },
