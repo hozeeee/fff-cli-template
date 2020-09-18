@@ -14,10 +14,12 @@ Vue.config.productionTip = false;
 
 // 按需加载 ant-design-vue
 import {<% if(needAside){%>
-  Menu,<%} %>
+  Menu,
+  Tabs,<%} %>
   Icon
 } from "ant-design-vue";<% if(needAside){%>
-Vue.use(Menu);<%} %>
+Vue.use(Menu);
+Vue.use(Tabs);<%} %>
 Vue.use(Icon);
 
 Vue.prototype.$api = api;
