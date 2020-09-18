@@ -1,0 +1,28 @@
+[{
+  "source": "./src/App.ejs",
+  "target": "./src/App.vue"
+},
+{
+  "source": "./src/main.ejs",
+  "target": "./src/main.js"
+},
+{
+  "source": "./vue.config.ejs",
+  "target": "./vue.config.js"
+},
+{
+  "source": "./src/views/home.ejs",
+  "target": "./src/views/home.vue"
+},
+{
+  "source": "./src/router/route.component.config.ejs",
+  "target": "./src/router/route.component.config.js"
+},
+{
+  "source": "./src/router/index.ejs",
+  "target": "./src/router/index.js"
+},
+{
+  "source": ".src/header/index.ejs",
+  "target": ".src/header/index.vue"
+}]

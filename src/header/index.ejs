@@ -1,8 +1,7 @@
 <template>
   <div class="header_container">
     <img class="logo" src="@/assets/img/logo.gif" />
-    <span class="title">我是头部...</span>
-    <!------------ aside 存在时才需要 ------------>
+    <span class="title">我是头部...</span><% if(needAside){%>
     <a-tabs
       class="header_tabs"
       v-model="activeKey"
@@ -13,13 +12,11 @@
       @change="onTabsChange"
     >
       <a-tab-pane v-for="pane in panes" :key="pane.key" :tab="pane.title" :closable="pane.closable"></a-tab-pane>
-    </a-tabs>
-    <!------------------------------------------->
+    </a-tabs><%} %>
   </div>
 </template>
 <script>
-export default {
-  /* ********** aside 存在时才需要 ********** */
+export default {<% if(needAside){%>
   watch: {
     $route(route) {
       // 以路由的 path 作为 tab-pane 的 key
@@ -64,8 +61,7 @@ export default {
     onTabsChange(activeKey) {
       this.$router.replace(activeKey);
     },
-  },
-  /* *************************************** */
+  },<%} %>
 };
 </script>
 <style lang="less" scoped>
@@ -83,9 +79,8 @@ export default {
   .title {
     font-size: 20px;
     text-indent: 10px;
-  }
+  }<% if(needAside){%>
 
-  /* ***** aside 存在时才需要 ***** */
   .header_tabs {
     @height: 30px;
     height: @height;
@@ -99,7 +94,6 @@ export default {
         line-height: @height !important;
       }
     }
-  }
-  /* ***************************** */
+  }<%} %>
 }
 </style>

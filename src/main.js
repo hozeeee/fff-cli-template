@@ -20,11 +20,13 @@ Vue.config.productionTip = false;
 import {
   /* *** 侧边栏 *** */
   Menu,
+  Tabs,
   /* ************* */
   Icon
 } from "ant-design-vue";
 /* *** 侧边栏 *** */
 Vue.use(Menu);
+Vue.use(Tabs);
 /* ************* */
 Vue.use(Icon);
 
