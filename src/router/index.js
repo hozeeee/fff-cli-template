@@ -27,6 +27,7 @@ const router = new VueRouter({
   // // 路由的配置在 aside 组件中生成
   // routes: [
   //   // 组件的注册请在 route.component.config.js 配置。组件会添加 route-* 前缀。
+  //   // 如： {path: '/', name: "home", component: Vue.component("route-home")}
   // ],
   /* *************************** */
 
