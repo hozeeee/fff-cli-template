@@ -22,35 +22,8 @@
 </template>
 <script>
 import { getMenuPathKeys } from "../menuUtils";
-// 这部分内容只是为了兼容"无线嵌套菜单"的情况。
-// 若清楚自己的菜单有多少层嵌套，可以不用。同时 "runtimeCompiler:true" 的配置也可以去掉。
-import { Menu } from "ant-design-vue";
-const SubMenu = {
-  template: `
-    <a-sub-menu :key="menuInfo.id" v-bind="$props" v-on="$listeners">
-      <span slot="title">
-        <a-icon v-if="menuInfo.iconType" :type="menuInfo.iconType" />
-        <span>{{ menuInfo.title }}</span>
-      </span>
-      <template v-for="item in menuInfo.children">
-        <a-menu-item v-if="!Array.isArray(item.children) || item.children.length===0" :key="item.id" :value="item">
-          <a-icon v-if="item.iconType" :type="item.iconType" />
-          <span>{{ item.title }}</span>
-        </a-menu-item>
-        <SubMenu v-else :key="item.id" :menu-info="item" />
-      </template>
-    </a-sub-menu>
-  `,
-  name: "SubMenu",
-  isSubMenu: true,
-  props: {
-    ...Menu.SubMenu.props,
-    menuInfo: {
-      type: Object,
-      default: () => ({}),
-    },
-  },
-};
+import SubMenu from "./SubMenu";
+
 export default {
   props: {
     menuData: {

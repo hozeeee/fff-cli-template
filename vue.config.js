@@ -43,6 +43,4 @@ module.exports = {
     }
   },
 
-  // 包含运行时解析器
-  runtimeCompiler: true
 }
